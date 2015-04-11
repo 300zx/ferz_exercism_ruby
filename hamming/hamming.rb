@@ -1,21 +1,19 @@
 class Hamming
   def self.compute(str_a, str_b)
-    str_a_array = str_a.split('')
-    str_b_array = str_b.split('')
 
-    str_length = str_a_array.length
+    str_length = str_a.chars.length
 
     index = 0
-    mismatches = 0
+    match = 0
 
     str_length.times do
-      if str_a_array.at(index) == str_b_array.at(index)
-        mismatches += 1
+      if str_a.chars.at(index) == str_b.chars.at(index)
+        match += 1
       end
       index += 1
     end
 
-    return str_length - mismatches
+    return str_length - match
   end
 end
 
